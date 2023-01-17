@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll</title>
+  <style>
+    body {
+      background-color: black;
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+    }
+
+    button {
+      outline: none;
+      background-color: tomato;
+      color: white;
+      font-size: 32px;
+      margin: 16px 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="find">Find a rabbit</button>
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+  <img id="rabbit" src="img/rabbit.png" alt="rabbit">
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+  <img src="img/carrot.png" alt="carrot">
+
+  <script>
+    const findButton = document.querySelector('.find');
+    const rabbit = document.querySelector('#rabbit');
+    findButton.addEventListener('click', (event) => {
+      // console.log('clicked');
+      rabbit.scrollIntoView({ behavior: "smooth", block: "center" });
+      //smooth: 부드럽게 스크롤링 , block 은 수직으로 위치 지정하는 속성값
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Window Load</title>
+    <script src="test.js" defer></script>
+    <!-- js 가 먼저 출력되고  script 태그 안에 있는 문장이 출력됨 -->
+</head>
+
+<body>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('DOMContentLoaded');
+        })
+        // after resources
+        window.addEventListener('load', () => {
+            console.log('load');
+        })
+
+        window.addEventListener('beforeunload', () => {
+            console.log('beforeunload');
+        })
+        window.addEventListener('unload', () => {
+            console.log('unload');
+        })
+    </script>
+</body>
+
+</html>
