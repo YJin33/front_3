@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>event prevent ex</title>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <input type="checkbox">
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        document.addEventListener('wheel', event => {
+            console.log('scrolling');
+            //scrolling처럼 빨리 진행해야하는 경우 scrolling 이벤트를 들을 수만 있고 브라우저의 기본값은 취소할 수 x
+            // event.preventDefault();
+        },
+            //{ passive: false }
+            // passive : true 이면 preventDefault()를 하지 X
+        );
+        const checkbox = document.querySelector('input');
+        checkbox.addEventListener('click', event => {
+            console.log('checked');
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
